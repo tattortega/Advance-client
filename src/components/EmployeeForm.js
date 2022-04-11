@@ -26,14 +26,14 @@ export default function EmployeeForm() {
         event.preventDefault();
         try {
             if (editing) {
-                const response = await fetch(`http://localhost:4000/employee/${params.id}`, {
+                const response = await fetch(`https://advance-server.herokuapp.com/employee/${params.id}`, {
                     method: 'PUT',
                     body: JSON.stringify(employee),
                     headers: { 'Content-Type': 'application/json' },
                 });
                 await response.json();
             } else {
-                const response = await fetch(`http://localhost:4000/employee`, {
+                const response = await fetch(`https://advance-server.herokuapp.com/employee`, {
                     method: 'POST',
                     body: JSON.stringify(employee),
                     headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ export default function EmployeeForm() {
     }, [params.id]);
 
     const loadEmployee = async (id) => {
-        const res = await fetch("http://localhost:4000/employee/" + id);
+        const res = await fetch(`https://advance-server.herokuapp.com/employee/` + id);
         const data = await res.json();
         setEmployee({
             firstname: data.firstname,

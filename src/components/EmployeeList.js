@@ -8,7 +8,7 @@ export default function EmployeeList() {
     const navigate = useNavigate();
 
     const loadEmployees = async () => {
-        const response = await fetch(`http://localhost:4000/employees`)
+        const response = await fetch(`https://advance-server.herokuapp.com/employees`)
         const data = await response.json()
         setEmployees(data)
     }
@@ -17,7 +17,7 @@ export default function EmployeeList() {
         var isDelete = window.confirm("¿Esta seguro(a) de eliminar a este usuario?");
         if (isDelete) {
             try {
-                await fetch(`http://localhost:4000/employee/${id}`, {
+                await fetch(`https://advance-server.herokuapp.com/employee/${id}`, {
                     method: "DELETE",
                 });
                 setEmployees(employees.filter((employee) => employee.employeeid !== id));
