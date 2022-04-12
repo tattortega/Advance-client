@@ -1,6 +1,8 @@
 import { Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom';
+import moment from 'moment';
+
 
 export default function EmployeeForm() {
 
@@ -190,7 +192,7 @@ export default function EmployeeForm() {
                                 variant='outlined'
                                 label='Fecha de nacimiento'
                                 type='date'
-                                value={employee.birthdate}
+                                value={moment(employee.birthdate).format("YYYY-MM-DD")}
                                 sx={{
                                     display: 'block',
                                     margin: '.5rem 0',
