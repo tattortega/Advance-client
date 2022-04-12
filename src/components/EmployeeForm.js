@@ -210,7 +210,6 @@ export default function EmployeeForm() {
                                     label='Tipo de documento'
                                     required='true'
                                     value={employee.documenttype}
-                                    disabled={editing}
                                     sx={{
                                         display: 'block',
                                         margin: '.5rem 0',
@@ -231,7 +230,6 @@ export default function EmployeeForm() {
                                 required='true'
                                 type='text'
                                 value={employee.documentnumber}
-                                disabled={editing}
                                 sx={{
                                     display: 'block',
                                     margin: '.5rem 0',
